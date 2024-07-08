@@ -6,6 +6,10 @@ import threading
 import os
 import sys
 
+def cheese(event):
+    if event.name == 'windows' or event.name == 'win':
+        return False
+
 def main():
     root = tk.Tk()
     root.attributes('-topmost', True)  
@@ -35,6 +39,8 @@ def main():
     
     task_manager_thread = threading.Thread(target=game, daemon=True)
     task_manager_thread.start()
+
+    keyboard.hook(cheese)
 
     root.mainloop()
 
