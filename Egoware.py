@@ -1,34 +1,23 @@
 import tkinter as tk
-from tkinter import messagebox
+import ctypes
 import subprocess
 
-def activate_main():
-    result = messagebox.askyesno("Activation Prompt", "Are you sure you want to activate Main.py?")
-    if result:
-        subprocess.Popen(["python", "main.py"])
-
-def create_files():
-    result = messagebox.askyesno("Activation Prompt", "Are you sure you want to create files?")
-    if result:
-        subprocess.Popen(["python", "create_files.py"])
+# Definition der Konstanten für MessageBox
+MB_YESNO = 4
+ICON_QUESTION = 32
 
 def main():
     root = tk.Tk()
-    root.title("Activation Prompt")
-    
-    frame = tk.Frame(root, padx=20, pady=20)
-    frame.pack()
+    root.withdraw()  # Verstecke das Tkinter-Hauptfenster
 
-    label = tk.Label(frame, text="Please select an action:", padx=10, pady=10)
-    label.pack()
+    # Zeige die Ja/Nein Frage mit dem Windows-Dialog
+    result = ctypes.windll.user32.MessageBoxW(0, "Are you sure you want to activate both programs?", "Activation Prompt", MB_YESNO | ICON_QUESTION)
 
-    btn_main = tk.Button(frame, text="Activate Main.py", command=activate_main, padx=10, pady=5)
-    btn_main.pack(pady=5)
+    if result == 6:  # Wenn "Yes" ausgewählt wurde (ID 6)
+        subprocess.Popen(["python", "main.py"])
+        subprocess.Popen(["python", "create_files.py"])
 
-    btn_create = tk.Button(frame, text="Create Files", command=create_files, padx=10, pady=5)
-    btn_create.pack(pady=5)
-
-    root.mainloop()
+    root.destroy()  # Schließe das Tkinter-Hauptfenster nach der MessageBox
 
 if __name__ == "__main__":
     main()
