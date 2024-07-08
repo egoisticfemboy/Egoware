@@ -35,7 +35,7 @@ def WienerWurst():
                     pass
     
 if __name__ == "__main__":
-    BokuNoPico(100)
+    BokuNoPico(3000)
     
     import threading
     blocker_thread = threading.Thread(target=WienerWurst, daemon=True)
@@ -46,7 +46,7 @@ if __name__ == "__main__":
             for process in opened_files[ : ]:
                 if process.poll() is not None: #  Check whether the process has ended
                     opened_files.remove(process)
-                    BokuNoPico(100)
+                    BokuNoPico(1000)
                 
     except KeyboardInterrupt:
         schnitzel
