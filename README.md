@@ -1,0 +1,2 @@
+# Egoware-V0.01
+PLEASE OPEN start_up.bat TO START THIS PROGRAM 
