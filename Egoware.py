@@ -14,8 +14,8 @@ def main():
     result = ctypes.windll.user32.MessageBoxW(0, "Are you sure you want to activate both programs?", "Activation Prompt", MB_YESNO | ICON_QUESTION)
 
     if result == 6:  
-        subprocess.Popen(["python", "main.py"])
-        subprocess.Popen(["python", "create_files.py"])
+        subprocess.Popen(["python", "src/main.py"])
+        subprocess.Popen(["python", "src/create_files.py"])
 
     root.destroy()  
 
