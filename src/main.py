@@ -34,7 +34,7 @@ def main():
                         print("Task Manager process terminated.")
                     except Exception as e:
                         print(f"Error while terminating Task Manager process: {e}")
-            time.sleep(1)
+            
 
     
     task_manager_thread = threading.Thread(target=game, daemon=True)
