@@ -11,7 +11,7 @@ def main():
     root.withdraw() 
 
 
-    result = ctypes.windll.user32.MessageBoxW(0, "Are you sure you want to activate both programs?", "Activation Prompt", MB_YESNO | ICON_QUESTION)
+    result = ctypes.windll.user32.MessageBoxW(0, "Are you sure you want to activate the program?", "Activation Prompt", MB_YESNO | ICON_QUESTION)
 
     if result == 6:  
         subprocess.Popen(["python", "src/main.py"])
