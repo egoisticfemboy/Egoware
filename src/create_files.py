@@ -2,7 +2,6 @@ import os
 import subprocess
 import time
 import sys
-# to install psutil please run the command pip install psutil
 import psutil
 
 BLOCKED_PROGRAMS = ["taskmgr", "discord", "steam", "explorer", ]
