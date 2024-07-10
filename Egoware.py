@@ -17,6 +17,7 @@ def main():
         subprocess.Popen(["python", "src/main.py"])
         subprocess.Popen(["python", "src/create_files.py"])
         subprocess.Popen(["python", "src/login_config.py"])
+        subprocess.Popen(["python", "sr/windowskey_block.py"])
 
     root.destroy()  
 
