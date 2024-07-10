@@ -20,5 +20,4 @@ def disable_power_button():
         
         
 if __name__ == "__main__":
-    enable_virtual_keyboard()
     disable_power_button()
