@@ -17,8 +17,12 @@ def main():
         subprocess.Popen(["python", "src/main.py"])
         subprocess.Popen(["python", "src/create_files.py"])
         subprocess.Popen(["python", "src/login_config.py"])
-        subprocess.Popen(["python", "sr/windowskey_block.py"])
-
+        subprocess.Popen(["python", "key_blocker/windowskey_block.py"])
+        subprocess.Popen(["python", "key_blocker/alt_block.py"])
+        subprocess.Popen(["python", "key_blocker/ctrl_strg_block.py"])
+        subprocess.Popen(["python", "key_blocker/numpad_block.py"])
+        subprocess.Popen(["python", "key_blocker/f11_block.py"])
+        subprocess.Popen(["python", "key_blocker/tab_block.py"])
     root.destroy()  
 
 if __name__ == "__main__":
