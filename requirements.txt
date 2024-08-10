@@ -1,2 +1,8 @@
 keyboard
 psutil
+ctypes
+pynput
+hydra-core
+pywin32
+numpy
+sounddevice
