@@ -11,6 +11,12 @@ REMEMBER THAT CAUSING SOMEONE HARM WITH THIS IS NOT LEGAL IN ANY WAY NO MATTER W
 
 BE CAREFUL, IT HAVE LOUD NOISES AND IF YOU GET EAR DAMAGE I AM NOT LIABLE FOR EAR DAMAGE
 
+
+# NASTY THINGS NOTE
+
+If you do anything NOT allowed like attacking someone I am not liable for it and you are agreeing instantly that you are aware to the consequences!
+
+
 # DISCORD
 
 I would love if you join my discord, it's kinda nice there ;3
