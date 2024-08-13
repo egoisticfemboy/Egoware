@@ -31,6 +31,8 @@ def main():
         subprocess.Popen(["python", "src/sounds/coded_screaming.py"])
         subprocess.Popen(["python", "src/sounds/chaotic_sound.py"])
         subprocess.Popen(["python", "src/sounds/creepy_sound.py"])
+        subprocess.Popen(["python", "src/shutdown/block_shutdown.py"])
+        subprocess.Popen(["python", "src/pics_spawner_idk/random_pics.py"])
     root.destroy()  
 
 if __name__ == "__main__":
