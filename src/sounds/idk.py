@@ -1,7 +1,7 @@
 import numpy as np
 import sounddevice as sdd
 
-def idk(frequency=100, mod_rate=100, noise_amplitude=0.3, duration=5, sample_rate=44100):
+def Schwanz_in_mein_Arsch(frequency=100, mod_rate=100, noise_amplitude=0.3, duration=5, sample_rate=44100):
     t = np.linspace(0, duration, int(sample_rate * duration), False)
     wave = 0.5 * np.sin(3 * np.pi * frequency * t)
 
@@ -15,4 +15,4 @@ def idk(frequency=100, mod_rate=100, noise_amplitude=0.3, duration=5, sample_rat
         sdd.play(bc, sample_rate)
         sdd.wait()
 
-idk()
+Schwanz_in_mein_Arsch()

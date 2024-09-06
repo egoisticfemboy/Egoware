@@ -1,7 +1,7 @@
 import numpy as np
 import sounddevice as sdd
 
-def bcs(frequency=1000, mod_rate=5, noise_amplitude=0.2, duration=10, sample_rate=44100):
+def bbc(frequency=1000, mod_rate=5, noise_amplitude=0.2, duration=10, sample_rate=44100):
     t = np.linspace(0, duration, int(sample_rate * duration), False)
     wave = 0.5 * np.sin(2 * np.pi * frequency * t)
 
@@ -15,4 +15,4 @@ def bcs(frequency=1000, mod_rate=5, noise_amplitude=0.2, duration=10, sample_rat
         sdd.play(bc, sample_rate)
         sdd.wait()
 
-bcs()
+bbc()

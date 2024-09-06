@@ -2,7 +2,7 @@ import numpy as np
 import sounddevice as sdd
 import random
 
-def chaotic_sound(duration=10, sample_rate=44100):
+def Cock_Lover(duration=10, sample_rate=44100):
     t = np.linspace(0, duration, int(sample_rate), False)
 
     # Generate an empty sound-array
@@ -34,4 +34,4 @@ def chaotic_sound(duration=10, sample_rate=44100):
         sdd.play(chaotic_wave, sample_rate)
         sdd.wait()
 
-chaotic_sound()
+Cock_Lover()
