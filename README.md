@@ -20,4 +20,4 @@ If you do anything NOT allowed like attacking someone I am not liable for it and
 # DISCORD
 
 I would love if you join my discord, it's kinda nice there ;3
-[AMETHYS ASYLUM](https://discord.gg/37cKyT78rX)
+[AMETHYST ASYLUM](https://discord.gg/37cKyT78rX)
