@@ -20,4 +20,4 @@ If you do anything NOT allowed like attacking someone I am not liable for it and
 # DISCORD
 
 I would love if you join my discord, it's kinda nice there ;3
-[FANTASY WORLD](https://discord.gg/PHUAyGJwKA)
+[AMETHYS ASYLUM](https://discord.gg/37cKyT78rX)
